@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>renovatebot/.github"],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "mcr.microsoft.com/vscode/devcontainers/typescript-node"
+      ],
+      "extends": ["schedule:monthly"]
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["semantic-release"],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["@types/jest"],
+      "groupName": "jest monorepo"
+    },
+    {
+      "paths": ["**/__fixtures__/**"],
+      "enabled": false
+    }
+  ]
+}
